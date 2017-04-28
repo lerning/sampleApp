@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title><%= full_title(yield(:title)) %></title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag  'application', media: 'all',
+                               'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+  </head>
   <body>
-    <%= yield %>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "sample apppp", root_path, id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",   root_path %></li>
+            <li><%= link_to "Help",   help_path %></li>
+            <li><%= link_to "Log in", '#' %></li>
+          </ul>
+        </nav>
+    </header>
+    <div class="container center">
+      <%= yield %>
+    </div>
+<img class="center-block" style="width: 300px"alt="kitty" src="../assets/kitten.jpeg" />
+</div>
+<%= render 'layouts/footer' %>
   </body>
 </html>
